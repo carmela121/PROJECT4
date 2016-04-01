@@ -30,7 +30,7 @@ router.route('/users/:id')
 router.post('/register', authenticationController.register);
 router.post('/login', authenticationController.login);
 
-router.route('/restaurants')
+router.route('/cars')
   .get(carsController.index);
 
 module.exports = router;
