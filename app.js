@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cors());
 
-app.use('/api', router);
+app.use('/', router);
 
 app.listen(port, function() {
   console.log("Express is listening on port " + port);
