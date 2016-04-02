@@ -7,18 +7,18 @@ mongoose.connect(db.uri);
 User.collection.drop();
 
 User.create([{
-  username: "mickyginger",
-  email: "mike.hayden@ga.co",
+  username: "test1",
+  email: "test1@gmail.com",
   password: "password",
   passwordConfirmation: "password"
 },{
-  username: "theBoyRane",
-  email: "rane.gowan@ga.co",
+  username: "test2",
+  email: "test2@gmail.com",
   password: "password",
   passwordConfirmation: "password"
 },{
-  username: "oholdme",
-  email: "ollie.holden@ga.co",
+  username: "test3",
+  email: "test3@gmail.com",
   password: "password",
   passwordConfirmation: "password"
 }], function(err, users) {
