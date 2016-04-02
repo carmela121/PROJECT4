@@ -1,5 +1,5 @@
 angular
-  .module('MyFavouriteCars')
+  .module('project4')
   .controller('CarsController', CarsController);
 
   CarsController.$inject = ['$resource']
@@ -7,7 +7,7 @@ angular
 
     var self = this;
 
-    var Car = $resource('http://localhost:3000/api/cars/:id', {id: '@_id'});
+    var Car = $resource('http://localhost:3000/cars/:id', {id: '@_id'});
 
     this.selectCar = null;
     this.all       = Car.query();

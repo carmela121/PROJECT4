@@ -1,9 +1,9 @@
 var router = require('express').Router();
 var jwt = require('jsonwebtoken');
-var usersController = require('../controllers/users');
-var carsController = require('../controllers/cars');
-var authenticationController = require('../controllers/authentication');
-var secret = require('../config/tokens').secret;
+var usersController = require('../../controllers/users');
+var carsController = require('../../controllers/cars');
+var authenticationController = require('../../controllers/authentication');
+var secret = require('../../config/tokens').secret;
 
 // custom JWT middleware
 function secureRoute(req, res, next) {
@@ -17,6 +17,10 @@ function secureRoute(req, res, next) {
     next();
   });
 }
+
+router.get('/', function(req, res) {
+  res.render('index')
+})
 
 router.route('/users')
   .get(secureRoute, usersController.index);
