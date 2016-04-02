@@ -4,7 +4,7 @@ angular
 
 Car.$inject = ['$resource', 'API'];
 function Car($resource, API) {
-  return $resource(API + '/api/cars/:id', { id: '@_id' }, {
+  return $resource(API + '/cars/:id', { id: '@_id' }, {
     get: { method: "GET" },
     query: { method: "GET" }
   })
