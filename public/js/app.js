@@ -14,16 +14,16 @@ function Router($stateProvider, $urlRouterProvider) {
   $stateProvider
   .state('home', {
     url: '/home',
-    templateUrl: 'index.html'
+    templateUrl: '/views/home.html'
   })
   .state('login', {
-    url: '/login',
-    templateUrl: 'login.html'
+    url: '/',
+    templateUrl: '/views/login.html'
   })
 
   .state('register', {
     url: '/register',
-    templateUrl: 'register.html'
+    templateUrl: '/views/register.html'
   });
 
   $urlRouterProvider.otherwise('/');
