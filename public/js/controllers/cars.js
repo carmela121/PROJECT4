@@ -20,7 +20,7 @@ angular
       console.log("selected");
     }
     function addCar() {
-      self.car.push({ name: car.name, selected: false, image: car.image });
+      self.car.push({ year: car.year, make: car.make, model: car.model, price: car.price, miles: car.miles, selected: false, image: car.image });
 
     }
     function deleteCar($index) {
