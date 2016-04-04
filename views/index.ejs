@@ -7,67 +7,111 @@
   <script src="/vendor/angular-jwt/dist/angular-jwt.min.js"></script>
   <script src="/vendor/angular-resource/angular-resource.min.js"></script>
   <script src="/vendor/angular-ui-router/release/angular-ui-router.min.js"></script>
+  <script src="/vendor/angular-bootstrap/ui-bootstrap.js"></script>
 
 
   <script src="/js/app.js"></script>
   <script src="/js/controllers/cars.js"></script>
   <script src="/js/controllers/users.js"></script>
+  <script src="/js/controllers/navBarController.js"></script>
   <script src="/js/models/car.js"></script>
   <script src="/js/models/user.js"></script>
   <script src="/js/services/authInterceptor.js"></script>
   <script src="/js/services/token.js"></script>
+  <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+
+  <script type="text/javascript">
+    Stripe.setPublishableKey('pk_test_p0QQDCeJQA7W9X9y0VP7QOz5');
+  </script>
+
+  <script src="bower_components/angular-payments/lib/angular-payments.js"></script>
+  <script src="payment/pay.js"></script>
   
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body ng-controller= "CarsController as cars">
-<div ng-app="project4" ng-controller="usersController as users"
-  <nav class="navbar navbar-default">
+  <div ng-app="project4" ng-controller="usersController as users">
+  <nav ng-controller="navBarController as nav" class="navbar navbar-default">
     <div class="container-fluid">
       <div class="navbar-header">
-      
+
         <a class="navbar-brand" href="#/index">FindaCar</a>
       </div>
-  
-    <ul class="nav navbar-nav navbar-right">
+
+      <ul class="nav navbar-nav navbar-right">
         <li><a href="#/addCar">Add a Car</a></li>
         <li><a href="#/register">Sign up</a></li>
         <li><a href="#/login">Log in</a></li>
         <li><a href="#" ng-click="users.logout()">Log out</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Learn more <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Action</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else here</a></li>
-              <li><a href="#">Separated link</a></li>
-            </ul>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
         </li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ users.currentUser.username }} <span class="caret"></span>
-          <img src="http://placehold.it/18x18" class="profile-image img-circle"><b class="caret"></b></a>
+        <span class="dropdown" uib-dropdown on-toggle="toggled(open)">
+          <a href="simple-dropdown" uib-dropdown-toggle>
+            <img src="http://placehold.it/18x18" class="profile-image img-circle"> {{ users.currentUser.profileImage }} {{ users.currentUser.username }}▾
+          </a>
+          <ul class="dropdown" uib-dropdown-menu aria-labelledby="simple-dropdown">
+            <li ng-repeat="item in nav.accountItems">{{ item.name }}</li>
+          </ul>
+        </span>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+
+<!--           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ users.currentUser.username }} <span class="caret"></span>
+            <img src="http://placehold.it/18x18" class="profile-image img-circle"><b class="caret"></b></a>
             <ul class="dropdown-menu">
               <li><a ng-click="users.logout()">Log out</a></li>
               <li><a href="#">Search</a></li>
               <li><a href="#">Profile</a></li>
+            </ul> -->
+
+<!-- <ul class="nav navbar-nav navbar-right">
+          <span class="dropdown" uib-dropdown on-toggle="toggled(open)">
+            <a href id="simple-dropdown" uib-dropdown-toggle>
+              Children's Centres Information
+            </a>
+            <ul uib-dropdown-menu aria-labelledby="simple-dropdown">
+            <li ng-repeat="item in nav.items">
+                <a href>{{item.name}}</a>
+                <li><a ui-sref="home">Home</a></li>
+                <li><a ui-sref="info">Information For Families</a></li>
+                <li><a ui-sref="center">Kintore Way</a></li>
+                <li><a ui-sref="center">Pilgrims Way</a></li>
+                <li><a ui-sref="center">South Bermondsey</a></li>
+                <li><a ui-sref="center">Rotherhite</a></li>
+              </li>
             </ul>
-        </li>
-    </ul>
-      </div>
-    </div>
-  </nav>
+          </span>
+        </ul>  -->
+
+
+
+
+
+
+
+
+
+
+
+<form class="navbar-form navbar-center" role="search">
+  <div class="form-group">
+    <input type="text" class="form-control" placeholder="Find a car">
   </div>
+  <button type="submit" class="btn btn-default">Search</button>
+</form>
 
-  <form class="navbar-form navbar-center" role="search">
-    <div class="form-group">
-      <input type="text" class="form-control" placeholder="Find a car">
-    </div>
-    <button type="submit" class="btn btn-default">Search</button>
-  </form>
-
-  <section ui-view ng-controller="usersController as users">
-    
-  </section>
+<section ui-view ng-controller="usersController as users"></section>
 
 </body>
 </html>

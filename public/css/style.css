@@ -154,3 +154,8 @@ body {
     margin-bottom: 1em;
 }
 
+.dropdown {
+    line-height: 50px;
+    margin-right: 15px;
+}
+

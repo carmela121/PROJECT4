@@ -1,5 +1,5 @@
 angular
-  .module('project4', ['ngResource', 'ui.router', 'angular-jwt'])
+  .module('project4', ['ngResource', 'ui.router', 'angular-jwt', 'ui.bootstrap'])
   .constant('API', 'http://localhost:3000')
   .config(InterceptorConfig)
   .config(Router);
@@ -13,17 +13,21 @@ Router.$inject = ['$stateProvider', '$urlRouterProvider'];
 function Router($stateProvider, $urlRouterProvider) {
   $stateProvider
   .state('home', {
-    url: '/home',
+    url: '/',
     templateUrl: '/views/home.html'
   })
   .state('login', {
-    url: '/',
+    url: '/login',
     templateUrl: '/views/login.html'
   })
 
   .state('register', {
     url: '/register',
     templateUrl: '/views/register.html'
+  })
+  .state('addCar', {
+    url: '/addCar',
+    templateUrl: '/views/addCar.html'
   });
 
   $urlRouterProvider.otherwise('/');
