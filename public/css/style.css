@@ -158,4 +158,6 @@ body {
     line-height: 50px;
     margin-right: 15px;
 }
+.container {
+  max-width: 750px; }
 

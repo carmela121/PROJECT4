@@ -1,8 +1,11 @@
 angular
-  .module('project4', ['ngResource', 'ui.router', 'angular-jwt', 'ui.bootstrap'])
+  .module('project4', ['ngResource', 'ui.router', 'angular-jwt', 'ui.bootstrap', 'angularStripe'])
   .constant('API', 'http://localhost:3000')
   .config(InterceptorConfig)
-  .config(Router);
+  .config(Router)
+  .config(function() {
+      Stripe.setPublishableKey('pk_test_6pRNASCoBOKtIshFeQd4XMUh');
+    });
 
 InterceptorConfig.$inject = ['$httpProvider'];
   function InterceptorConfig($httpProvider){
@@ -28,6 +31,10 @@ function Router($stateProvider, $urlRouterProvider) {
   .state('addCar', {
     url: '/addCar',
     templateUrl: '/views/addCar.html'
+  })
+  .state('payment', {
+    url: '/payment',
+    templateUrl: '/views/payment.html'
   });
 
   $urlRouterProvider.otherwise('/');
