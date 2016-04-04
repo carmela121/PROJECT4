@@ -36,6 +36,10 @@ function Router($stateProvider, $urlRouterProvider) {
     url: '/payment',
     templateUrl: '/views/payment.html'
   });
+  .state('map', {
+    url: '/map',
+    templateUrl: '/views/map.html'
+  });
 
   $urlRouterProvider.otherwise('/');
 

@@ -1,5 +1,5 @@
 angular
-  .module('angularStripe')
+  .module('project4')
   .controller('PaymentController', PaymentController);
 
 PaymentController.$inject = ['$http', 'API_URL'];
