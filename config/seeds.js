@@ -38,21 +38,24 @@ make: "BMW",
 model: "Series 3",
 price: "£53",
 image: "http://zombdrive.com/images/2013-bmw-3-series-12.jpg",
-miles: "10,000"
+miles: "10,000",
+postCode: "E2 8FS"
 },{
 year: "2006",
 make: "LAND ROVER",
 model: "Sport",
 price: "£70",
 image: "http://media.caranddriver.com/images/06q3/267360/2006-land-rover-range-rover-sport-hse-photo-5038-s-429x262.jpg",
-miles: "10,000"
+miles: "10,000",
+postCode: "E2 8FS"
 },{
 year: "2015",
 make: "Tesla",
 model: "S",
 price: "£60",
 image: "http://media.caranddriver.com/images/14q4/638369/2015-tesla-model-s-p85d-first-drive-review-car-and-driver-photo-648964-s-original.jpg",
-miles: "10,000"
+miles: "10,000",
+postCode: "E2 8FS"
 
 }], function(err, cars) {
   if(err) console.error(err);
