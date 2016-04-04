@@ -7,13 +7,13 @@ function navBarController() {
   var self = this
 
   self.accountItems = [{
-    name: "Test1",
+    name: "Log out",
+    url: "users.logout()"
+  }, {
+    name: "My Account",
     url: ""
   }, {
-    name: "Test2",
-    url: ""
-  }, {
-    name: "Test3",
+    name: "Search for Cars",
     url: ""
   }]
 
