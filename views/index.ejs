@@ -44,7 +44,8 @@
             </ul>
         </li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ users.currentUser.username }} <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ users.currentUser.username }} <span class="caret"></span>
+          <img src="http://placehold.it/18x18" class="profile-image img-circle"><b class="caret"></b></a>
             <ul class="dropdown-menu">
               <li><a ng-click="users.logout()">Log out</a></li>
               <li><a href="#">Search</a></li>
@@ -64,7 +65,7 @@
     <button type="submit" class="btn btn-default">Search</button>
   </form>
 
-  <section ui-view>
+  <section ui-view ng-controller="usersController as users">
     
   </section>
 
