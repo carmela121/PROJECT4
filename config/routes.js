@@ -37,4 +37,11 @@ router.post('/login', authenticationController.login);
 router.route('/cars')
   .get(carsController.index);
 
+router.route('/cars/:id')
+  .all(carsController.index)
+  .get(carsController.show)
+  .put(carsController.update)
+  .delete(carsController.delete);
+
+
 module.exports = router;
