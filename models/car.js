@@ -9,7 +9,7 @@ var carSchema = mongoose.Schema({
   image: { type: String, required: true },
   miles: { type: String, required: true },
   postCode: { type: String, required: true },
-  availability: { type: String, required: true },
+  availability: { type: String}
   
   });
 

@@ -27,6 +27,7 @@ function UsersController(User, tokenService) {
   }
 
   self.register = function() {
+    console.log(self.currentUser);
     User.register(self.currentUser, handleLogin);
 
   }

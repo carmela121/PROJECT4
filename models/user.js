@@ -1,13 +1,14 @@
 var mongoose = require('mongoose');
 var bcrypt = require('bcrypt');
+var Car = require('./car');
 
 var userSchema = mongoose.Schema({
-  fullName: { type: String, unique: true },
-  username: { type: String, unique: true, required: true },
-  email:    { type: String, unique: true, required: true },
+  fullName: { type: String, unique: true},
+  username: { type: String, unique: true, required: true},
+  email:    { type: String, unique: true, required: true},
   passwordHash: { type: String },
   profileImage: { type: String, unique: true },
-  dob: { type: Number, unique: true },
+  dob: { type: Date, unique: true },
   drivingLicence: { type: String, unique: true },
   cars: [{ type: mongoose.Schema.ObjectId, ref: 'Car' }]
 

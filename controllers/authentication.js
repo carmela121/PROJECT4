@@ -4,7 +4,6 @@ var secret = require('../config/tokens').secret;
 
 function register(req, res) {
   User.create(req.body, function(err, user) {
-    // tidy up mongoose's awful error messages
     if(err) {
       if(err.code && (err.code === 11000 || err.code === 11001)) {
         var attribute = err.message.match(/\$([a-z]+)_/)[1];
