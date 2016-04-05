@@ -1,0 +1,12 @@
+<div ng-repeat="car in cars.all" class="container col-md-4">
+<div class="card">
+<img class="card-img-top" ng-src="{{ car.image }}"  alt="Card image cap">
+  <div class="card-block">
+    <a href="#" class="card-title">{{car.make}}</a>
+    <p class="card-title">{{car.model}}</p>
+  
+  
+    <a href="#"class="btn btn-primary">Add to Favourites</a>
+  </div>
+</div>
+</div>
