@@ -35,7 +35,8 @@ router.post('/register', authenticationController.register);
 router.post('/login', authenticationController.login);
 
 router.route('/cars')
-  .get(carsController.index);
+  .get(carsController.index)
+  .post(carsController.create);
 
 router.route('/cars/:id')
   .all(carsController.index)

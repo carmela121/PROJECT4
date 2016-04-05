@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html ng-app="project4">
 <head>
-  <title>Hello</title>
+  <title>FindACar</title>
 
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBxM36DxD-TmmCuWMML0UXBVSirOUkF42Q"></script>
   <script src="https://js.stripe.com/v2/"></script>
@@ -22,7 +22,7 @@
   <script src="/js/services/authInterceptor.js"></script>
   <script src="/js/services/token.js"></script>
   
-  <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="css/style.css">
 
@@ -33,14 +33,14 @@
     <div class="container-fluid">
       <div class="navbar-header">
 
-        <a class="navbar-brand" href="#/index">FindaCar</a>
+        <a class="navbar-brand" ui-sref="home">FindaCar</a>
       </div>
 
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#/addCar">Add a Car</a></li>
-        <li><a href="#/allCars">All Cars</a></li>
-        <li><a href="#/register">Sign up</a></li>
-        <li><a href="#/login">Log in</a></li>
+        <li><a ui-sref="addCar">Add a Car</a></li>
+        <li><a ui-sref="allCars">All Cars</a></li>
+        <li><a ui-sref="register">Sign up</a></li>
+        <li><a ui-sref="login">Log in</a></li>
         <li><a href="#" ng-click="users.logout()">Log out</a></li>
       
         <span class="dropdown" uib-dropdown on-toggle="toggled(open)">

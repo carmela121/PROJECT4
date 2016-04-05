@@ -1,6 +1,7 @@
 
 body {
-  background: url(http://freelymi.com/wp-content/uploads/2015/10/o-road-trip-facebook.jpg) no-repeat center center fixed; 
+    font-family: 'Roboto', sans-serif;
+    background: url(http://freelymi.com/wp-content/uploads/2015/10/o-road-trip-facebook.jpg) no-repeat center center fixed; 
    -webkit-background-size: cover;
    -moz-background-size: cover;
    -o-background-size: cover;

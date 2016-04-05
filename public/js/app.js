@@ -23,7 +23,6 @@ function Router($stateProvider, $urlRouterProvider) {
     url: '/login',
     templateUrl: '/views/login.html'
   })
-
   .state('register', {
     url: '/register',
     templateUrl: '/views/register.html'
@@ -41,8 +40,16 @@ function Router($stateProvider, $urlRouterProvider) {
     templateUrl: '/views/map.html'
   })
   .state('allCars', {
-    url: '/allCars',
+    url: '/cars',
     templateUrl: '/views/allCars.html'
+  })
+  .state('selectCar', {
+    url: '/cars/:id',
+    templateUrl: '/views/showCars.html'
+  })
+  .state('bookCar', {
+    url: '/bookCar',
+    templateUrl: '/views/bookCar.html'
   });
 
   $urlRouterProvider.otherwise('/');

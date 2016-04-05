@@ -1,6 +1,28 @@
-<form class="navbar-form navbar-center" role="search">
+
+<form ng-hide="submit" ng-submit="users.register()" class="form-horizontal" role="form">
   <div class="form-group">
-    <input type="text" class="form-control" placeholder="Find a car">
+    <input type="text" class="form-control" placeholder="Select City">
   </div>
-  <button type="submit" class="btn btn-default">Search</button>
+
+  
+  <div class="form-group">
+    <label for="from" class="col-sm-3 control-label">From</label>
+    <div class="col-sm-9">
+      <input ng-model= "users.currentUser.dob"type="date" id="dateFrom" class="form-control">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="to" class="col-sm-3 control-label">To</label>
+    <div class="col-sm-9">
+      <input ng-model= "users.currentUser.dob"type="date" id="dateTo" class="form-control">
+    </div>
+  </div>
+  
+  
+  <div class="form-group">
+    <div class="col-sm-9 col-sm-offset-3">
+      <button type="submit" class="btn btn-primary btn-block">Search for Cars</button>
+    </div>
+  </div>
+
 </form>

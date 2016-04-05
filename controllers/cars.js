@@ -8,16 +8,15 @@ function carsIndex(req, res) {
     return res.status(200).json(cars);
   });
 }
+
 function carsCreate(req, res){
-  var car = new Car(req.body.car);
+  var car = new Car(req.body);
   car.save(function(err){
     if (err) return res.status(500).send(err);
-    var name = req.body.car.user;
-    User.findOne({ name: name }, function(err, user){
-      user.cars.push(car);
-      user.save(function(err, user) {
-        res.status(201).send(car);
-      });
+    var name = req.body.user;
+    User.findByIdAndUpdate(req.body.user, { $push: { cars: car } }, function(err, user){
+      if(err) return res.status(500).json({ message: err });
+      res.status(201).send(car);
     });
   });
 }

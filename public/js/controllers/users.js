@@ -2,8 +2,8 @@ angular
   .module('project4')
   .controller('usersController', UsersController);
 
-UsersController.$inject = ['User', 'tokenService']
-function UsersController(User, tokenService) {
+UsersController.$inject = ['$state', 'User', 'tokenService']
+function UsersController($state, User, tokenService) {
   var self = this;
 
   self.all = [];
@@ -23,6 +23,7 @@ function UsersController(User, tokenService) {
   }
 
   self.login = function() {
+    $state.go('allCars');
     User.login(self.currentUser, handleLogin);
   }
 
