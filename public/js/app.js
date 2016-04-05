@@ -1,5 +1,5 @@
 angular
-  .module('project4', ['ngResource', 'ui.router', 'angular-jwt', 'ui.bootstrap', 'angularStripe'])
+  .module('project4', ['ngResource', 'ui.router', 'angular-jwt', 'ui.bootstrap'])
   .constant('API', 'http://localhost:3000')
   .config(InterceptorConfig)
   .config(Router)
@@ -35,10 +35,14 @@ function Router($stateProvider, $urlRouterProvider) {
   .state('payment', {
     url: '/payment',
     templateUrl: '/views/payment.html'
-  });
+  })
   .state('map', {
     url: '/map',
     templateUrl: '/views/map.html'
+  })
+  .state('allCars', {
+    url: '/allCars',
+    templateUrl: '/views/allCars.html'
   });
 
   $urlRouterProvider.otherwise('/');
