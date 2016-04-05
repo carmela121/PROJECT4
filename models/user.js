@@ -8,7 +8,8 @@ var userSchema = mongoose.Schema({
   passwordHash: { type: String },
   profileImage: { type: String, unique: true },
   dob: { type: Number, unique: true },
-  drivingLicence: { type: String, unique: true }
+  drivingLicence: { type: String, unique: true },
+  cars: [{ type: mongoose.Schema.ObjectId, ref: 'Car' }]
 
 });
 
