@@ -32,6 +32,23 @@ price: "£60",
 image: "http://media.caranddriver.com/images/14q4/638369/2015-tesla-model-s-p85d-first-drive-review-car-and-driver-photo-648964-s-original.jpg",
 miles: "10,000",
 postCode: "E2 8FS"
+},{
+year: "2013",
+make: "Ford",
+model: "Fiesta",
+price: "£45",
+image: "http://static.usnews.rankingsandreviews.com/images/Auto/izmo/350753/2013_ford_fiesta_angularfront.jpg",
+miles: "10,000",
+postCode: "E2 8FS"
+},{
+year: "2013",
+make: "Porsche",
+model: "Cayman",
+price: "£100",
+image: "http://s3.caradvice.com.au/wp-content/uploads/2013/02/Porsche-Cayman-profile-blue-driving.jpg",
+miles: "10,000",
+postCode: "E2 8FS"
+
 
 }], function(err, cars) {
   if(err) console.error(err);
