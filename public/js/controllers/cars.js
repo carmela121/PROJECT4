@@ -63,12 +63,15 @@ angular
 
     this.newCar    = {};
 
+    this.removeCar = function(car) {
+      console.log(car);
+    }
+
     $rootScope.$on('$stateChangeSuccess', function() {
       if($state.params.id) {
         self.selectedCar = Car.get({ id: $state.params.id });
       }
     });
-
 
 
     // this.selectCar = function(car){

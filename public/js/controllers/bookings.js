@@ -16,11 +16,20 @@ angular
 
     this.newBooking   = {};
 
+
+    this.removeCar = function(car) {
+      console.log(car)
+    }
+
     $rootScope.$on('$stateChangeSuccess', function() {
       if($state.params.id) {
         self.selectedBooking = Booking.get({ id: $state.params.id });
       }
     });
+
+    function removeCar() {
+      console.log("hello")
+    }
 
     function addBooking() {
       self.newBooking.car = tokenService.getCar()._id;

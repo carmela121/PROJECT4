@@ -1,5 +1,5 @@
 
-<div ng-repeat="car in cars.all" class="cards col-md-7">
+<div ng-repeat="car in cars.all" class="cards col-md-12">
 <div class="card">
 <img class="card-img-top" ng-src="{{ car.image }}"  alt="Card image cap">
   <div class="card-block">
@@ -9,8 +9,10 @@
     <p class="price">{{ car.price }} per day</p>
 
     <img class="avatar" ng-src="{{ users.currentUser.profileImage }}"  alt="avatar">
+
+   <!--  <a ng-if="!car.isBooked" class="btn btn-primary" ng-click="cars.removeCar(car)">Book this car</a> -->
   
-    <a ng-if="!car.isBooked" class="btn btn-primary" ui-sref="bookCar({ id: car._id })">Book this car</a>
+    <a ng-if="!car.isBooked" class="btn btn-primary" ng-click="selectCar()" ui-sref="bookCar({ id: car._id })">Book this car</a>
   </div>
 </div>
 </div>

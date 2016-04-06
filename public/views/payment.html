@@ -1,5 +1,5 @@
-<div class="container" ng-controller="PaymentController as payment">
-    <h1>Stripe Payment Form</h1>
+<div class="payment" ng-controller="PaymentController as payment">
+
     {{payment.Form.$submitted}}
     <form class="form" name="payment.Form" ng-hide="payment.paymentSuccessful" ng-submit="payment.pay()">
       <div class="row">

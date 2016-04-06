@@ -1,5 +1,16 @@
-<h1>Book Car</h1>
+<div class="card" ng-controller="BookingsController as bookings" class="cards col-md-7">
+<div class="card">
 
-<h1>{{ cars.selectedCar.make }}</h1>
+<img class="card-img-top" ng-src="{{ cars.selectedCar.image }}"  alt="Card image cap">
+  <div class="card-block">
+    <p class="username">{{ user.username }}'s</p>
+    <a ui-sref="selectCar({ id: cars.selectedCar._id })" class="make">{{ cars.selectedCar.make }}</a>
+    <p class="model">{{ cars.selectedCar.model }}</p>
+    <p class="price">{{ cars.selectedCar.price }} per day</p>
 
-<img ng-src="{{ cars.selectedCar.image }}">
+    <img class="avatar" ng-src="{{ users.currentUser.profileImage }}"  alt="avatar">
+  
+    <a type="submit" class="btn btn-primary" ui-sref="payment">Pay Now</a>
+  </div>
+</div>
+</div>
