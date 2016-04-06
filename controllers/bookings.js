@@ -10,7 +10,16 @@ function bookingsIndex(req, res) {
 }
 
 function bookingsCreate(req, res){
-  var booking = new Booking(req.body);
+  Car.findById({id: req.body.carId}, function(err, car) {
+    var booking = new Booking();
+    booking.car = car;
+    booking.startDate = req.body.startDate;
+    booking.endDate = req.body.endDate;
+    booking.save(function() {
+      return res.status(200).send({car: car, booking: booking});
+    });
+  })
+  
   booking.save(function(err){
     if (err) return res.status(500).send(err);
     res.status(201).send(booking);

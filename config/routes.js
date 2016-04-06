@@ -55,6 +55,7 @@ router.route('/bookings/:id')
   .get(bookingsController.show)
   .put(bookingsController.update)
   .delete(bookingsController.delete);
-
+  
+  router.route('/payments');
 
 module.exports = router;
