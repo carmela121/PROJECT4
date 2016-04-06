@@ -7,7 +7,17 @@ angular
 
     var self = this;
 
-    var Car = $resource('http://localhost:3000/cars/:id', {id: '@_id'});
+    var Car = $resource('http://localhost:3000/cars/:id', {id: '@_id'}, {
+      update: { method: "PUT" },
+      available: { method: "GET", isArray: true, url: 'http://localhost:3000/cars/available' }
+    });
+
+    
+    this.getAvailableCars = function() {
+      self.all = Car.available({ start: self.starDate, end: self.endDate });
+    }
+
+
     var Booking = $resource('http://localhost:3000/bookings/:id', {id: '@_id'});
 
     var today = new Date();
@@ -44,7 +54,7 @@ angular
     }
 
     this.selectedCar = null;
-    this.all       = Car.query();
+    // this.all       = Car.query();
     // this.chooseCars= chooseCars;
     this.addCar    = addCar;
     this.deleteCar = deleteCar;

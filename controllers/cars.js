@@ -1,6 +1,29 @@
 var Car = require('../models/car');
+var Booking = require('../models/booking');
 var User = require('../models/user');
 
+function carsAvailable(req, res) {
+
+  if(!req.query.start || !req.query.end) {
+    return res.status(400).json({ message: "Please supply a date range"});
+  }
+
+  var startDate = new Date(req.query.start);
+  var endDate = new Date(req.query.end);
+
+  Booking.find({ $and: [{ endDate: { $gte: startDate } }, { startDate: { $lte: endDate } }] }, function(err, bookings) {
+    if (err) return res.status(500).send(err);
+
+    carIds = bookings.map(function(booking) {
+      return booking.car;
+    });
+
+    Car.find({ _id: { $nin: carIds }}, function(err, cars) {
+      if (err) return res.status(500).send(err);
+      return res.status(200).json(cars);
+    });
+  });
+}
 
 function carsIndex(req, res) {
   Car.find(function(err, cars) {
@@ -22,7 +45,6 @@ function carsCreate(req, res){
 }
 
 function carsShow(req, res) {
-  console.log("CARS SHOW");
   Car.findById(req.params.id, function(err, car) {
     if(err) return res.status(500).json({ message: err });
     return res.status(200).json(car);
@@ -50,6 +72,6 @@ module.exports = {
   create: carsCreate,
   show: carsShow,
   update: carsUpdate,
-  delete: carsDelete
-
+  delete: carsDelete,
+  available: carsAvailable
 };

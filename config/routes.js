@@ -39,19 +39,22 @@ router.route('/cars')
   .get(carsController.index)
   .post(carsController.create);
 
+router.route('/cars/available')
+  .get(carsController.available);
+
 router.route('/cars/:id')
   .get(carsController.show)
   .put(carsController.update)
   .delete(carsController.delete);
 
-  router.route('/bookings')
-    .get(bookingsController.index)
-    .post(bookingsController.create);
+router.route('/bookings')
+  .get(bookingsController.index)
+  .post(bookingsController.create);
 
-  router.route('/bookings/:id')
-    .get(bookingsController.show)
-    .put(bookingsController.update)
-    .delete(bookingsController.delete);
+router.route('/bookings/:id')
+  .get(bookingsController.show)
+  .put(bookingsController.update)
+  .delete(bookingsController.delete);
 
 
 module.exports = router;
