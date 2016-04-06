@@ -2,6 +2,7 @@ var router = require('express').Router();
 var jwt = require('jsonwebtoken');
 var usersController = require('../controllers/users');
 var carsController = require('../controllers/cars');
+var bookingsController = require('../controllers/bookings');
 var authenticationController = require('../controllers/authentication');
 var secret = require('../config/tokens').secret;
 
@@ -42,6 +43,15 @@ router.route('/cars/:id')
   .get(carsController.show)
   .put(carsController.update)
   .delete(carsController.delete);
+
+  router.route('/bookings')
+    .get(bookingsController.index)
+    .post(bookingsController.create);
+
+  router.route('/bookings/:id')
+    .get(bookingsController.show)
+    .put(bookingsController.update)
+    .delete(bookingsController.delete);
 
 
 module.exports = router;
