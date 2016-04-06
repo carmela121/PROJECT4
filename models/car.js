@@ -6,8 +6,7 @@ var carSchema = mongoose.Schema({
   model: { type: String, required: true },
   price: { type: String, required: true },
   image: { type: String, required: true },
-  miles: { type: String, required: true },
-  availability: { type: Boolean }
+  miles: { type: String, required: true }
 });
 
 

@@ -22,6 +22,7 @@ function carsCreate(req, res){
 }
 
 function carsShow(req, res) {
+  console.log("CARS SHOW");
   Car.findById(req.params.id, function(err, car) {
     if(err) return res.status(500).json({ message: err });
     return res.status(200).json(car);

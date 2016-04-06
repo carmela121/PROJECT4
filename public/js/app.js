@@ -48,7 +48,7 @@ function Router($stateProvider, $urlRouterProvider) {
     templateUrl: '/views/showCars.html'
   })
   .state('bookCar', {
-    url: '/bookCar',
+    url: '/bookCar/:id',
     templateUrl: '/views/bookCar.html'
   });
 

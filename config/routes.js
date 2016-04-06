@@ -39,7 +39,6 @@ router.route('/cars')
   .post(carsController.create);
 
 router.route('/cars/:id')
-  .all(carsController.index)
   .get(carsController.show)
   .put(carsController.update)
   .delete(carsController.delete);

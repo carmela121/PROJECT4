@@ -10,8 +10,7 @@
 
     <img class="avatar" ng-src="{{ users.currentUser.profileImage }}"  alt="avatar">
   
-  
-    <a class="btn btn-primary" ui-sref="bookCar">Book this car</a>
+    <a ng-if="!car.isBooked" class="btn btn-primary" ui-sref="bookCar({ id: car._id })">Book this car</a>
   </div>
 </div>
 </div>
