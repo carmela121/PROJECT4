@@ -15,6 +15,7 @@ angular
     
     this.getAvailableCars = function() {
       self.all = Car.available({ start: self.starDate, end: self.endDate });
+      console.log('clicked');
     }
 
 
