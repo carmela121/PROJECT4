@@ -14,8 +14,9 @@ angular
 
     
     this.getAvailableCars = function() {
-      self.all = Car.available({ start: self.starDate, end: self.endDate });
-      console.log('clicked');
+      console.log("GET AVAILABLE CARS BEFORE FILTER: ", self.all);
+      self.all = Car.available({ start: self.startDate, end: self.endDate });
+      console.log("GET AVAILABLE CARS AFTER FILTER:  ", self.all);
     }
 
 
@@ -55,7 +56,7 @@ angular
     }
 
     this.selectedCar = null;
-    // this.all       = Car.query();
+    this.all       = Car.query();
     // this.chooseCars= chooseCars;
     this.addCar    = addCar;
     this.deleteCar = deleteCar;

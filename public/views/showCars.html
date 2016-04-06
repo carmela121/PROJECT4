@@ -1,5 +1,15 @@
-<h1>Show Car</h1>
+<div class="card" class="cards col-md-7">
+<div class="card">
+<img class="card-img-top" ng-src="{{ car.image }}"  alt="Card image cap">
+  <div class="card-block">
+    <p class="username">{{ user.username }}'s</p>
+    <a ui-sref="selectCar({ id: car._id })" class="make">{{ car.make }}</a>
+    <p class="model">{{ car.model }}</p>
+    <p class="price">{{ car.price }} per day</p>
 
-<h1>{{ cars.selectedCar.make }}</h1>
-
-<img ng-src="{{ cars.selectedCar.image }}">
+    <img class="avatar" ng-src="{{ users.currentUser.profileImage }}"  alt="avatar">
+  
+    <a type="submit" class="btn btn-primary" ui-sref="payment">Pay Now</a>
+  </div>
+</div>
+</div>
