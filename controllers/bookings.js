@@ -13,11 +13,7 @@ function bookingsCreate(req, res){
   var booking = new Booking(req.body);
   booking.save(function(err){
     if (err) return res.status(500).send(err);
-    var name = req.body.car;
-    Car.findByIdAndUpdate(req.body.car, { $push: { bookings: booking } }, function(err, car){
-      if(err) return res.status(500).json({ message: err });
-      res.status(201).send(booking);
-    });
+    res.status(201).send(booking);
   });
 }
 
@@ -27,8 +23,6 @@ function bookingsShow(req, res) {
     return res.status(200).json(booking);
   });
 }
-
-
 
 function bookingsUpdate(req, res) {
   Booking.findByIdAndUpdate(req.params.id, req.body, { new: true }, function(err, booking) {
@@ -50,5 +44,4 @@ module.exports = {
   show: bookingsShow,
   update: bookingsUpdate,
   delete: bookingsDelete
-
 };

@@ -8,6 +8,40 @@ angular
     var self = this;
 
     var Car = $resource('http://localhost:3000/cars/:id', {id: '@_id'});
+    var Booking = $resource('http://localhost:3000/bookings/:id', {id: '@_id'});
+
+    var today = new Date();
+    today.setHours(0);
+    today.setMinutes(0);
+    today.setSeconds(0);
+
+    this.startDate = new Date(today);
+    var tomorrow = new Date();
+    tomorrow.setDate(this.startDate.getDate()+1);
+    this.endDate = tomorrow;
+
+    this.startPickerOpen = false;
+    this.endPickerOpen = false;
+
+    this.startDateOptions = {
+      dateDisabled: function(data) {
+        return data.date < today;
+      }
+    }
+
+    this.endDateOptions = {
+      dateDisabled: function(data) {
+        return data.date < self.startDate;
+      }
+    }
+
+    this.openStartPicker = function() {
+      this.startPickerOpen = true;
+    }
+
+    this.openEndPicker = function() {
+      this.endPickerOpen = true;
+    }
 
     this.selectedCar = null;
     this.all       = Car.query();

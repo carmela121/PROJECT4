@@ -7,7 +7,7 @@ angular
 
     var self = this;
 
-    var Booking = $resource('http://localhost:3000/bookings/:id', {id: '@_id'});
+    
 
     this.selectedBooking = null;
     this.all       = Booking.query();
@@ -33,8 +33,6 @@ angular
     function deleteBooking($index) {
       self.all.splice($index, 1);
     }
-
-    
 
 
 }
