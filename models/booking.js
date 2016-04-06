@@ -6,5 +6,5 @@ var bookingSchema = mongoose.Schema({
   car: { type: mongoose.Schema.ObjectId },
   user: { type: mongoose.Schema.ObjectId }
 });
-
+ 
 module.exports = mongoose.model("Booking", bookingSchema);

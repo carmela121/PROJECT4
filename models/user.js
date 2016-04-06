@@ -11,7 +11,6 @@ var userSchema = mongoose.Schema({
   dob: { type: Date, unique: true },
   drivingLicence: { type: String, unique: true },
   cars: [{ type: mongoose.Schema.ObjectId, ref: 'Car' }]
-
 });
 
 userSchema.set('toJSON', {
