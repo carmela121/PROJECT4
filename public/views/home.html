@@ -1,4 +1,4 @@
-<div class="row">
+<div class="rowDate">
   <div class="col-md-6">
     <div class="input-group">
       <input type="text" class="form-control" uib-datepicker-popup="dd MMMM yyyy" ng-model="cars.startDate" is-open="cars.startPickerOpen" datepicker-options="cars.startDateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
@@ -17,5 +17,5 @@
     </div>
   </div>
 
-  <button type="button" class="btn btn-sm btn-default" ng-click="cars.getAvailableCars()" ui-sref="allCars">Find Cars</button>
+  <button type="button" class="btn btn-sm btn-default findCars" ng-click="cars.getAvailableCars()" ui-sref="allCars">Find Cars</button>
 </div>

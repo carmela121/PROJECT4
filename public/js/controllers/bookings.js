@@ -15,9 +15,6 @@ function BookingsController($resource, tokenService, $state, $rootScope, Booking
   this.newBooking   = {};
 
 
-  this.removeCar = function(car) {
-    console.log(car)
-  }
 
   $rootScope.$on('$stateChangeSuccess', function() {
     if($state.params.id) {

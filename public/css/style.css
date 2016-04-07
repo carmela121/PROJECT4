@@ -174,7 +174,7 @@ body {
 
 .avatar {
     float: left;
-    margin-top: 1em;
+    margin-top: -5em;
     margin-right: 1em;
     position: relative;
 
@@ -204,3 +204,31 @@ body {
   .payment {
     color: white;
   }
+
+  .price {
+    color: black;
+    font-size: 40px;
+    font-weight: 700;
+  }
+
+  .priceDay {
+    text-align: right;
+  }
+
+  .card-img-top {
+    cursor: pointer;
+  }
+
+  .findCars {
+    margin-left: 315px;
+    margin-top: 50px;
+    background-color: #669900;
+    color: white;
+    font-size: 20px;
+  }
+
+  .rowDate {
+    margin-top: 300px;
+  }
+
+  

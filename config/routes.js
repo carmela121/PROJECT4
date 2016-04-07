@@ -1,5 +1,5 @@
 var router = require('express').Router();
-var stripe = require('stripe')(" sk_test_W5ONdwCB8p2Q8wRpw01JG5mT");
+var stripe = require('stripe')("sk_test_W5ONdwCB8p2Q8wRpw01JG5mT");
 var jwt = require('jsonwebtoken');
 var usersController = require('../controllers/users');
 var carsController = require('../controllers/cars');
