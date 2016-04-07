@@ -26,7 +26,15 @@ User.create([{
   password: "password",
   profileImage: "http://www.binarytradingforum.com/core/image.php?userid=27&dateline=1355305878",
   passwordConfirmation: "password"
-}], function(err, users) {
+  },{
+    username: "Beth",
+    email: "test7@gmail.com",
+    password: "password",
+    profileImage: "https://www.reed.co.uk/career-advice/wp-content/uploads/2012/12/How-to-complete-your-reed.co_.uk-profile.jpg",
+    passwordConfirmation: "password"
+
+
+  }], function(err, users) {
   if(err) console.error(err);
   else console.log(users);
 
@@ -74,7 +82,7 @@ User.create([{
   image: "http://s3.caradvice.com.au/wp-content/uploads/2013/02/Porsche-Cayman-profile-blue-driving.jpg",
   miles: 10000,
   postCode: "E2 8FS",
-  user: users[1]
+  user: users[3]
 
 
   }], function(err, cars) {
