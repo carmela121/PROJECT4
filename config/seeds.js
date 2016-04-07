@@ -9,22 +9,22 @@ User.collection.drop();
 Car.collection.drop();
 
 User.create([{
-  username: "test4",
+  username: "Sandokan",
   email: "test4@gmail.com",
   password: "password",
   profileImage: "https://assets.entrepreneur.com/content/16x9/822/20150406145944-dos-donts-taking-perfect-linkedin-profile-picture-selfie-mobile-camera-2.jpeg",
   passwordConfirmation: "password"
 },{
-  username: "test5",
+  username: "Lylo",
   email: "test5@gmail.com",
   password: "password",
   profileImage: "http://static1.squarespace.com/static/50de3e1fe4b0a05702aa9cda/t/50eb2245e4b0404f3771bbcb/1357589992287/ss_profile.jpg",
   passwordConfirmation: "password"
 },{
-  username: "test6",
+  username: "Sandy",
   email: "test6@gmail.com",
   password: "password",
-  profileImage: "http://giftedcoin.com/ProfileUploads/121_Natalia-Pic-profile-e1333318973427.jpg",
+  profileImage: "http://www.binarytradingforum.com/core/image.php?userid=27&dateline=1355305878",
   passwordConfirmation: "password"
 }], function(err, users) {
   if(err) console.error(err);
