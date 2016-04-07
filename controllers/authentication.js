@@ -19,6 +19,7 @@ function register(req, res) {
 }
 
 function login(req, res) {
+  console.log("logging in");
   User.findOne({ email: req.body.email }, function(err, user) {
     if(err) return res.send(500).json({ message: err });
     if(!user || !user.validatePassword(req.body.password)) return res.status(401).json({ message: "Unauthorized" });

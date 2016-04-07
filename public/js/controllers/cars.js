@@ -2,8 +2,8 @@ angular
   .module('project4')
   .controller('CarsController', CarsController);
 
-  CarsController.$inject = ['$resource', 'tokenService', '$state', '$rootScope']
-  function CarsController($resource, tokenService, $state, $rootScope) {
+  CarsController.$inject = ['$resource', 'tokenService', '$state', '$rootScope', 'cartService']
+  function CarsController($resource, tokenService, $state, $rootScope, cartService) {
 
     var self = this;
 
@@ -14,9 +14,8 @@ angular
 
     
     this.getAvailableCars = function() {
-      console.log("GET AVAILABLE CARS BEFORE FILTER: ", self.all);
+      cartService.setDates(self.startDate, self.endDate);
       self.all = Car.available({ start: self.startDate, end: self.endDate });
-      console.log("GET AVAILABLE CARS AFTER FILTER:  ", self.all);
     }
 
 
@@ -26,10 +25,16 @@ angular
     today.setHours(0);
     today.setMinutes(0);
     today.setSeconds(0);
+    today.setMilliseconds(0);
 
     this.startDate = new Date(today);
     var tomorrow = new Date();
     tomorrow.setDate(this.startDate.getDate()+1);
+    tomorrow.setHours(0);
+    tomorrow.setMinutes(0);
+    tomorrow.setSeconds(0);
+    tomorrow.setMilliseconds(0);
+
     this.endDate = tomorrow;
 
     this.startPickerOpen = false;
@@ -57,42 +62,31 @@ angular
 
     this.selectedCar = null;
     this.all       = Car.query();
-    // this.chooseCars= chooseCars;
     this.addCar    = addCar;
     this.deleteCar = deleteCar;
 
     this.newCar    = {};
 
-    this.removeCar = function(car) {
-      console.log(car);
-    }
-
     $rootScope.$on('$stateChangeSuccess', function() {
       if($state.params.id) {
-        self.selectedCar = Car.get({ id: $state.params.id });
+        Car.get({ id: $state.params.id }, function(car) {
+          self.selectedCar = car;
+          cartService.setCar(car);
+        });
       }
     });
 
-
-    // this.selectCar = function(car){
-    //   self.selectCar = Car.get({ id:car._id });
-    //   console.log("selected");
-    // }
     function addCar() {
       self.newCar.user = tokenService.getUser()._id;
       Car.save(self.newCar, function(res) {
         console.log(res);
         self.all.push(self.newCar);
       });
-
     }
+
     function deleteCar($index) {
       self.all.splice($index, 1);
     }
-
-    // function chooseCars () {
-    //   return self.all.filter(function(x) { return x.selected == true; })
-    // }
 
 
 }

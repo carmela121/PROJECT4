@@ -9,10 +9,7 @@
     <p class="price">{{ cars.selectedCar.price }} per day</p>
 
     <img class="avatar" ng-src="{{ users.currentUser.profileImage }}"  alt="avatar">
-    
-    <div ng-controller="BookingsController as bookings">
-      <a type="submit" class="btn btn-primary" ng-click="bookings.addBooking(cars.startDate, cars.endDate)" ui-sref="payment">Pay Now</a>
-    </div>
+    <a type="submit" class="btn btn-primary" ui-sref="payment">Pay Now</a>
   </div>
 </div>
 </div>

@@ -23,6 +23,7 @@ function UsersController($state, User, tokenService) {
   }
 
   self.login = function() {
+   
     $state.go('allCars');
     User.login(self.currentUser, handleLogin);
   }
@@ -38,6 +39,7 @@ function UsersController($state, User, tokenService) {
     self.all = [];
     self.currentUser = null;
     self.message = "";
+    console.log("logout");
 
   }
 

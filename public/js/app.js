@@ -4,7 +4,7 @@ angular
   .config(InterceptorConfig)
   .config(Router)
   .config(function() {
-      Stripe.setPublishableKey('pk_test_6pRNASCoBOKtIshFeQd4XMUh');
+      Stripe.setPublishableKey('pk_test_BfHSI7eQdN9W0cOp1UOrUKFp');
     });
 
 InterceptorConfig.$inject = ['$httpProvider'];

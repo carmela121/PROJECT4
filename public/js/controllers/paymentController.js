@@ -2,15 +2,17 @@ angular
   .module('project4')
   .controller('PaymentController', PaymentController);
 
-PaymentController.$inject = ['$http', 'API_URL'];
-function PaymentController($http, API_URL) {
+PaymentController.$inject = ['$http', 'API', 'cartService'];
+function PaymentController($http, API, cartService) {
   var self = this;
+
+  console.log(cartService.getTotal());
 
   self.card = {};
   self.payee = null;
-  self.amount = null;
+  self.amount = cartService.getTotal();
   self.currency = "gbp";
-  self.paymentSuccessful = true;
+  self.paymentSuccessful = false;
 
   self.pay = function() {
     Stripe.card.createToken(self.card, function(status, response) {
@@ -24,7 +26,7 @@ function PaymentController($http, API_URL) {
         };
 
         $http
-          .post(API_URL + '/payment', data)
+          .post(API + '/payment', data)
           .then(function(res) {
             if(res.status === 200) {
               self.paymentSuccessful = true;

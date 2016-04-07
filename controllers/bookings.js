@@ -20,10 +20,10 @@ function bookingsCreate(req, res){
     });
   })
   
-  booking.save(function(err){
-    if (err) return res.status(500).send(err);
-    res.status(201).send(booking);
-  });
+  // booking.save(function(err){
+  //   if (err) return res.status(500).send(err);
+  //   res.status(201).send(booking);
+  // });
 }
 
 function bookingsShow(req, res) {
