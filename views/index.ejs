@@ -48,7 +48,8 @@
       
           <span class="dropdown" uib-dropdown on-toggle="toggled(open)">
             <a href="simple-dropdown" uib-dropdown-toggle>
-              <img ng-src="{{ users.currentUser.profileImage }}" class="profile-image img-circle">  {{ users.currentUser.username }}▾
+              <img ng-src="{{ users.currentUser.profileImage }}" class="profile-image img-circle"> 
+              {{ users.currentUser.username }}▾
             </a>
             <ul class="dropdown" uib-dropdown-menu aria-labelledby="simple-dropdown">
               <li ng-repeat="item in nav.accountItems">{{ item.name }}</li>

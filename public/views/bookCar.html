@@ -3,13 +3,13 @@
 
 <img class="card-img-top" ng-src="{{ cars.selectedCar.image }}"  alt="Card image cap">
   <div class="card-block">
-    <p class="username">{{ user.username }}'s</p>
+    <p class="username">{{ cars.selectedCar.user.username }}'s</p>
     <a ui-sref="selectCar({ id: cars.selectedCar._id })" class="make">{{ cars.selectedCar.make }}</a>
     <p class="model">{{ cars.selectedCar.model }}</p>
     <p class="price">£{{ cars.selectedCar.price }}</p>
     <p class="priceDay">per day</p>
 
-    <img class="avatar" ng-src="{{ users.currentUser.profileImage }}"  alt="avatar">
+    <img class="avatar" ng-src="{{ cars.selectedCar.user.profileImage }}"  alt="avatar">
     <a type="submit" class="btn btn-primary" ui-sref="payment">Pay Now</a>
   </div>
 </div>

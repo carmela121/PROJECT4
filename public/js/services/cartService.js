@@ -11,7 +11,8 @@ function CartService($window) {
 
   return {
     setDates: function(startDate, endDate) {
-      console.log("setting dates: ", startDate, endDate)
+      cart.startDate = startDate;
+      cart.endDate = endDate;
       cart.days = ((endDate.getTime() - startDate.getTime()) / 1000 / 60 / 60 / 24);
       saveCart();
     },
@@ -21,6 +22,13 @@ function CartService($window) {
     },
     getTotal: function() {
       return cart.days * cart.car.price;
+    },
+    getCar: function() {
+      return cart.car;
+    },
+    getDates: function() {
+
+      return { startDate: cart.startDate, endDate: cart.endDate } 
 
     }
   }

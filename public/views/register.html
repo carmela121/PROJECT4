@@ -17,6 +17,13 @@
                     </div>
                 </div>
                 <div class="form-group">
+                    <label for="username" class="col-sm-3 control-label">Profile Picture</label>
+                    <div class="col-sm-9">
+                        <input ng-model="users.currentUser.profileImage" type="text" id="image" placeholder="Picture URL" class="form-control" autofocus>
+                        <span class="help-block"></span>
+                    </div>
+                </div>
+                <div class="form-group">
                     <label for="email" class="col-sm-3 control-label">Email</label>
                     <div class="col-sm-9">
                         <input ng-model="users.currentUser.email" type="email" id="email" placeholder="Email" class="form-control">

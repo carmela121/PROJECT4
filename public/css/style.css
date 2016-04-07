@@ -227,10 +227,17 @@ body {
     background-color: #669900;
     color: white;
     font-size: 20px;
+
   }
 
   .rowDate {
     margin-top: 300px;
+  }
+
+  .profile-image {
+
+    width: 60px;
+    height: 60px;
   }
 
   

@@ -58,21 +58,24 @@ router.route('/bookings/:id')
   .delete(bookingsController.delete);
 
 router.post('/payment', function(req, res) {
-    var token = req.body.token;
+  var Booking = require('../models/booking');
+  var token = req.body.token;
 
-    var charge = stripe.charges.create({
-      amount: parseInt(parseFloat(req.body.amount * 100), 10),
-      currency: req.body.currency,
-      source: token,
-      description: 'TEST'
-    }, function(err, charge) {
-      if(err) {
-        return res.status(500).json({ message: err})
-      }
+  var charge = stripe.charges.create({
+    amount: parseInt(parseFloat(req.body.amount * 100), 10),
+    currency: req.body.currency,
+    source: token,
+    description: 'TEST'
+  }, function(err, charge) {
+    if(err) return res.status(500).json({ message: err});
+
+    // make a booking for this car...
+    Booking.create({ car: req.body.carId, startDate: req.body.startDate, endDate: req.body.endDate}, function(err, booking) {
       res.status(200).json({ message: "payment successful" });
+    })
 
-    });
   });
+});
   
 
 module.exports = router;

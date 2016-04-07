@@ -29,6 +29,7 @@ function UsersController($state, User, tokenService) {
   }
 
   self.register = function() {
+    $state.go('allCars');
     User.register(self.currentUser, handleLogin);
 
   }

@@ -22,7 +22,10 @@ function PaymentController($http, API, cartService) {
           token: response.id,
           amount: self.amount,
           currency: self.currency,
-          payee: self.payee
+          payee: self.payee,
+          carId: cartService.getCar()._id,
+          startDate: cartService.getDates().startDate,
+          endDate: cartService.getDates().endDate
         };
 
         $http
