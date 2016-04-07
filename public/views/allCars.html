@@ -1,17 +1,16 @@
-
 <div ng-repeat="car in cars.all" class="cards col-md-12">
-<div class="card">
-<img class="card-img-top" ng-src="{{ car.image }}" ng-click="selectCar()" ui-sref="bookCar({ id: car._id })"alt="Card image cap">
-  <div class="card-block">
-    <p class="username">{{ user.username }}'s</p>
-    <a ui-sref="selectCar({ id: car._id })" class="make">{{ car.make }}</a>
-    <p class="model">{{ car.model }}</p>
-    <p class="price">£{{ car.price }} </p>
-    <p class="priceDay">per day</p>
+  <div class="card">
+    <img class="card-img-top" ng-src="{{ car.image }}" ng-click="selectCar()" ui-sref="bookCar({ id: car._id })"alt="Card image cap">
+    <div class="card-block">
+      <p class="username">{{ car.user.username }}'s</p>
+      <a ui-sref="selectCar({ id: car._id })" class="make">{{ car.make }}</a>
+      <p class="model">{{ car.model }}</p>
+      <p class="price">£{{ car.price }} </p>
+      <p class="priceDay">per day</p>
 
-    <img class="avatar" ng-src="{{ users.currentUser.profileImage }}"  alt="avatar">
-  
-    <!-- <a ng-if="!car.isBooked" class="btn btn-primary" ng-click="selectCar()" ui-sref="bookCar({ id: car._id })">Book this car</a> -->
+      <img class="avatar" ng-src="{{ car.user.profileImage }}"  alt="avatar">
+    
+      <!-- <a ng-if="!car.isBooked" class="btn btn-primary" ng-click="selectCar()" ui-sref="bookCar({ id: car._id })">Book this car</a> -->
+    </div>
   </div>
-</div>
 </div>

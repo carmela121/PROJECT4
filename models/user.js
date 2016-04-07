@@ -9,8 +9,7 @@ var userSchema = mongoose.Schema({
   passwordHash: { type: String },
   profileImage: { type: String, unique: true },
   dob: { type: Date, unique: true },
-  drivingLicence: { type: String, unique: true },
-  cars: [{ type: mongoose.Schema.ObjectId, ref: 'Car' }]
+  drivingLicence: { type: String, unique: true }
 });
 
 userSchema.set('toJSON', {

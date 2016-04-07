@@ -14,8 +14,12 @@ angular
 
     
     this.getAvailableCars = function() {
-      cartService.setDates(self.startDate, self.endDate);
-      self.all = Car.available({ start: self.startDate, end: self.endDate });
+      if(!!tokenService.getToken()){
+        console.log("getting cars");
+        cartService.setDates(self.startDate, self.endDate);
+        $state.go('allCars');
+      return self.all = Car.available({ start: self.startDate, end: self.endDate });
+      }
     }
 
 

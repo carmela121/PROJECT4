@@ -18,7 +18,7 @@ function carsAvailable(req, res) {
       return booking.car;
     });
 
-    Car.find({ _id: { $nin: carIds }}, function(err, cars) {
+    Car.find({ _id: { $nin: carIds }}).populate('user').exec(function(err, cars) {
       if (err) return res.status(500).send(err);
       return res.status(200).json(cars);
     });
@@ -26,7 +26,7 @@ function carsAvailable(req, res) {
 }
 
 function carsIndex(req, res) {
-  Car.find(function(err, cars) {
+  Car.find().populate('user').exec(function(err, cars) {
     if(err) return res.status(500).json({ message: err });
     return res.status(200).json(cars);
   });
@@ -45,7 +45,7 @@ function carsCreate(req, res){
 }
 
 function carsShow(req, res) {
-  Car.findById(req.params.id, function(err, car) {
+  Car.findById(req.params.id).populate('user').exec(function(err, car) {
     if(err) return res.status(500).json({ message: err });
     return res.status(200).json(car);
   });

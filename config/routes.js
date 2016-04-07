@@ -41,7 +41,7 @@ router.route('/cars')
   .post(carsController.create);
 
 router.route('/cars/available')
-  .get(carsController.available);
+  .get(secureRoute, carsController.available);
 
 router.route('/cars/:id')
   .get(carsController.show)
