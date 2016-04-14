@@ -4,7 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "postinstall":"bower install",
+    "start":"node app.js"
   },
   "repository": {
     "type": "git",
@@ -22,7 +23,8 @@
     "jsonwebtoken": "^5.7.0",
     "mongoose": "4.1.1",
     "morgan": "^1.7.0",
-    "stripe": "^4.5.0"
+    "stripe": "^4.5.0",
+    "bower": "^1.7.9"
   },
   "bugs": {
     "url": "https://github.com/carmela121/PROJECT4/issues"
