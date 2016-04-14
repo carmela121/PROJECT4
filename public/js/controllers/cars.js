@@ -7,9 +7,9 @@
 
     var self = this;
 
-    var Car = $resource('http://localhost:3000/cars/:id', {id: '@_id'}, {
+    var Car = $resource('/cars/:id', {id: '@_id'}, {
       update: { method: "PUT" },
-      available: { method: "GET", isArray: true, url: 'http://localhost:3000/cars/available' }
+      available: { method: "GET", isArray: true, url: '/cars/available' }
     });
 
     
@@ -23,7 +23,7 @@
     }
 
 
-    var Booking = $resource('http://localhost:3000/bookings/:id', {id: '@_id'});
+    var Booking = $resource('/bookings/:id', {id: '@_id'});
 
     var today = new Date();
     today.setHours(0);
