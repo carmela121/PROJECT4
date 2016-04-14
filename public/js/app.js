@@ -1,6 +1,5 @@
 angular
   .module('project4', ['ngResource', 'ui.router', 'angular-jwt', 'ui.bootstrap'])
-  .constant('API', 'http://localhost:3000')
   .config(InterceptorConfig)
   .config(Router)
   .config(function() {
