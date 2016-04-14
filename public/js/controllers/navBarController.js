@@ -11,10 +11,10 @@ function navBarController() {
     url: "users.logout()"
   }, {
     name: "My Account",
-    url: ""
+    url: "account"
   }, {
     name: "Search for Cars",
-    url: ""
+    url: "allCars"
   }]
 
   self.status = {
