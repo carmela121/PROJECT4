@@ -12,7 +12,7 @@ User.create([{
   username: "Sandokan",
   email: "test4@gmail.com",
   password: "password",
-  profileImage: "https://assets.entrepreneur.com/content/16x9/822/20150406145944-dos-donts-taking-perfect-linkedin-profile-picture-selfie-mobile-camera-2.jpeg",
+  profileImage: "http://www.lifeedited.com/wp-content/uploads/2012/03/graham-hill-headshot.jpg",
   passwordConfirmation: "password"
 },{
   username: "Lylo",
@@ -30,7 +30,7 @@ User.create([{
     username: "Beth",
     email: "test7@gmail.com",
     password: "password",
-    profileImage: "https://www.reed.co.uk/career-advice/wp-content/uploads/2012/12/How-to-complete-your-reed.co_.uk-profile.jpg",
+    profileImage: "http://www.sashajacques.co.uk/images-headshots/2010-headshot-8460-copy.jpg",
     passwordConfirmation: "password"
 
 
