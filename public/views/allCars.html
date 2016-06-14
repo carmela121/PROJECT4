@@ -3,14 +3,13 @@
     <img class="card-img-top" ng-src="{{ car.image }}" ng-click="selectCar()" ui-sref="bookCar({ id: car._id })"alt="Card image cap">
     <div class="card-block">
       <p class="username">{{ car.user.username }}'s</p>
-      <a ui-sref="selectCar({ id: car._id })" class="make">{{ car.make }}</a>
+      <a ng-click="selectCar()" ui-sref="bookCar({ id: car._id })" class="make">{{ car.make }}</a>
       <p class="model">{{ car.model }}</p>
       <p class="price">£{{ car.price }} </p>
       <p class="priceDay">per day</p>
 
       <img class="avatar" ng-src="{{ car.user.profileImage }}"  alt="avatar">
     
-      <!-- <a ng-if="!car.isBooked" class="btn btn-primary" ng-click="selectCar()" ui-sref="bookCar({ id: car._id })">Book this car</a> -->
     </div>
   </div>
 </div>
